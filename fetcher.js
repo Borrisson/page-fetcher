@@ -2,10 +2,8 @@ const fs = require('fs');
 const request = require('request');
 const [fileFetch, fileStore] = process.argv.slice(2, 4);
 const promptQuestion = require('./promptQuestion');
+const done = require('./done');
 
-const done = (dataSZ, fileStore) => {
-  console.log(`Downloaded and saved ${dataSZ} bytes to ${fileStore}`);
-};
 
 const writeFileAsync = function(fileFetch, fileStore, callback) {
   request(fileFetch, (error, response, body) => {
